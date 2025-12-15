@@ -35,14 +35,12 @@ app.get('/', async (req, res) => {
       }
     });
 
-    const cars = resp.data.results;
-    res.render('homepage', {
-      title: 'Homepage | Integrating With HubSpot I Practicum',
-      cars,
-      nameProp,
-      brandProp,
-      plateProp
-    });
+    console.log(resp.data);
+
+    const data = resp.data.results;
+    const props = ['name', 'brand', 'plate'];
+    res.render('homepage', { title: 'Cars | Integrating With HubSpot I Practicum', data, props });
+    
   } catch (error) {
     console.error(error.response?.data || error);
     res.status(500).send('Error loading records.');
