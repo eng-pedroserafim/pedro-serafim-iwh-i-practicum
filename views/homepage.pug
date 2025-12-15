@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    a(href="/update-cobj") Add to this table
+    h1 Cars
+
+    if data && data.length
+      table
+        thead
+          tr
+            each p in props
+              th= p
+        tbody
+          each row in data
+            tr
+              each p in props
+                td= row.properties[p]
+    else
+      p No records found.
