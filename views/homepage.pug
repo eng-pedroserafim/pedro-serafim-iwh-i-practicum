@@ -4,19 +4,32 @@ html
     title= title
     link(rel="stylesheet", href="/css/style.css")
   body
-    a(href="/update-cobj") Add to this table
-    h1 Cars
+    .container
+      .header
+        div
+          h1 Cars
+          p.subtitle Custom object records stored in HubSpot
+        a.btn(href="/update-cobj") Add to this table
 
-    if data && data.length
-      table
-        thead
-          tr
-            each p in props
-              th= p
-        tbody
-          each row in data
-            tr
-              each p in props
-                td= row.properties[p]
-    else
-      p No records found.
+      .card
+        if data && data.length
+          table.table
+            thead
+              tr
+                th Name
+                th Brand
+                th Plate
+                th HubSpot
+            tbody
+              each row in data
+                tr
+                  td= row.properties.name
+                  td= row.properties.brand
+                  td= row.properties.plate
+                  td
+                    if row.url
+                      a(href=row.url target="_blank" rel="noopener") Open
+                    else
+                      | —
+        else
+          p.empty No records found.
