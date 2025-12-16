@@ -1,28 +1,158 @@
 # Welcome to the Integrating With HubSpot I: Foundations Practicum
 
-This repository is for the Integrating With HubSpot I: Foundations course. This practicum is one of two requirements for receiving your Integrating With HubSpot I: Foundations certification. You must also take the exam and receive a passing grade (at least 75%).
+This repository is for the **Integrating With HubSpot I: Foundations** course.  
+This practicum is one of two requirements for receiving the **Integrating With HubSpot I: Foundations certification**.  
+The second requirement is passing the certification exam with a minimum score of **75%**.
 
-To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
+The full practicum instructions are available here:  
+https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/l/objects/${custom-obj-number}/views/all/list
+**HubSpot developer test account custom object list view:**  
+https://app.hubspot.com/contacts/50806986/objects/2-54449633/views/all/list
 
-___
-## Tips:
-- Commit to your repository often. Even if you make small tweaks to your code, it’s best to be committing to your repository frequently.
-- The subject of the custom object is up to you. Feel free to get creative!
-- Please create a test account and include your private app access token in your repo.
-- Ensure you re-merge any working branches into the main branch.
-- DO NOT ADD YOUR PRIVATE APP TOKEN TO YOUR REPOSITORY. 
+---
 
-## Pre-requisites:
-- Using [Node](https://nodejs.org/en/download) and node packages
-- Using [Express](https://expressjs.com/en/starter/installing.html)
-- Using [Axios](https://axios-http.com/docs/intro)
-- Using [Pug templating system](https://pugjs.org/api/getting-started.html)
-- Using the command line
-- Using [Git and GitHub](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
+## Practicum Summary
 
-## Requirements
-- All work must be your own. During the grading process we will check the revision history. Submissions that do not meet this requirement will not be considered.
-- You must have at least two new routes in your index.js file and one new pug template for the homepage.
-- You must create a developer test account and link to it in your README.md file. Submissions that do not meet this requirement will not be considered.
+This project is a **Node.js application** built to fulfill all technical and procedural requirements defined in the Integrating With HubSpot I: Foundations practicum.
+
+The implementation demonstrates the complete lifecycle of a simple HubSpot integration:
+- CRM data modeling
+- API authentication using a private app
+- Data retrieval and creation via HTTP requests
+- Server-side rendering using templates
+- Secure handling of credentials
+- Incremental development with version control
+
+The project was developed and validated using a **HubSpot Developer Test Account**, as required.
+
+---
+
+## Custom Object Implementation
+
+A custom CRM object was created to satisfy the practicum requirements.
+
+**Object details:**
+- **Object name:** Cars
+- **Primary display property:** Name
+- **Additional custom properties:**
+  - Brand
+  - Plate
+- **Associations:** Associated with Contacts
+- **Creation method:** HubSpot Data Model Builder (UI)
+
+The object was populated with multiple records and validated both through the HubSpot UI and through API calls made by the application.
+
+---
+
+## Application Behavior
+
+The Node.js application integrates directly with the HubSpot CRM API using a **private app access token**.
+
+The application supports the following behaviors:
+
+- Fetching custom object records using the CRM Objects API
+- Rendering retrieved records in a tabular format using Pug templates
+- Creating new custom object records through an HTML form
+- Redirecting users after successful record creation
+- Handling API authentication securely via environment variables
+
+---
+
+## Routes Implemented
+
+| Route | Method | Description |
+|------|--------|-------------|
+| `/` | GET | Retrieves all Cars records from HubSpot and renders them in a table |
+| `/update-cobj` | GET | Renders a form to create a new Cars record |
+| `/update-cobj` | POST | Creates a new Cars record via the HubSpot API and redirects to the homepage |
+
+These routes demonstrate correct usage of HTTP methods, request handling, and API interaction using Express and Axios.
+
+---
+
+## Technology Stack
+
+- **Node.js** – JavaScript runtime
+- **Express** – Routing and application framework
+- **Axios** – HTTP client for HubSpot API calls
+- **Pug** – Server-side templating engine
+- **dotenv** – Environment variable management
+- **Git & GitHub** – Version control and collaboration
+
+---
+
+## Environment Variables
+
+Sensitive credentials are managed using environment variables.
+
+The following variables are required:
+
+```
+PRIVATE_APP_ACCESS_TOKEN=your_private_app_access_token_here
+CUSTOM_OBJECT_TYPE=2-54449633
+```
+
+The `.env` file is excluded from version control via `.gitignore` to ensure credentials are never committed.
+
+---
+
+## Running the Application Locally
+
+1. Install dependencies:
+   ```
+   npm install
+   ```
+
+2. Start the server:
+   ```
+   node index.js
+   ```
+
+3. Open a browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
+
+From the homepage, users can view existing Cars records and add new records via the provided form.
+
+---
+
+## Development and Version Control Practices
+
+This repository reflects professional development practices:
+
+- Incremental commits documenting each development step
+- Feature development performed on a working branch
+- Final merge into the main branch
+- No secrets committed to source control
+
+Commit history was intentionally maintained to demonstrate progress and adherence to the practicum instructions.
+
+---
+
+## Practicum Requirements Checklist
+
+The following checklist documents how each practicum requirement was addressed:
+
+- [✓] HubSpot Developer Test Account created
+- [✓] Private app created with required permissions
+- [✓] Custom CRM object created with at least three properties
+- [✓] Custom object associated with Contacts
+- [✓] Multiple records created and validated
+- [✓] Node.js application created using Express
+- [✓] Axios used to make authenticated API calls
+- [✓] GET route implemented to retrieve CRM data
+- [✓] POST route implemented to create CRM records
+- [✓] Pug templates used to render views
+- [✓] Environment variables used for secure authentication
+- [✓] Private app token excluded from the repository
+- [✓] Incremental Git commits demonstrating development progress
+- [✓] Working branch merged back into main branch
+
+---
+
+## Author
+
+Pedro Serafim  
+Integrating With HubSpot I: Foundations Practicum
