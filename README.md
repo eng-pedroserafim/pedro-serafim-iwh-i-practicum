@@ -26,12 +26,27 @@ The implementation demonstrates the complete lifecycle of a simple HubSpot integ
 - Secure handling of credentials
 - Incremental development with version control
 
+
+## Project Overview
 The project was developed and validated using a **HubSpot Developer Test Account**, as required.
+
+This Node.js application integrates with the HubSpot CRM API using a **private app** and showcases several key features:
+- **Custom Object Integration**: The application works with a custom CRM object called **Cars**, which has custom properties like Name, Brand, and Plate.
+- **Display Data**: It retrieves and displays these custom object records in a structured HTML table.
+- **Form Submission**: It allows users to submit new records using a form, which will be created in HubSpot.
+- **Environment Variables**: Sensitive credentials, like the private app access token, are managed using **dotenv**.
 
 ---
 
-## Custom Object Implementation
+## Custom Object Implementation - Cars
 A custom CRM object was created to satisfy the practicum requirements.
+The project utilizes a custom CRM object called **Cars**. This object contains the following fields:
+
+- **Name**: The name of the car (string).
+- **Brand**: The manufacturer of the car (string).
+- **Plate**: The registration plate number (string).
+
+This custom object is linked to **Contacts** within the HubSpot CRM. The association between the custom object and contacts enables relevant data to be organized and accessed across different areas of the CRM.
 
 **Object details:**
 - **Object name:** Cars
@@ -68,15 +83,28 @@ The application supports the following behaviors:
 
 These routes demonstrate correct usage of HTTP methods, request handling, and API interaction using Express and Axios.
 
+### Route 1: `/`
+- **Purpose**: This route displays all records for the custom object **Cars** in an HTML table.
+- **Implementation**: It fetches records from the HubSpot CRM API using the GET method and passes them to a Pug template (`homepage.pug`), which renders the table dynamically.
+
+### Route 2: `/update-cobj` (GET)
+- **Purpose**: This route renders a form to create new records for the custom object **Cars**.
+- **Implementation**: The form contains fields for the three properties: **Name**, **Brand**, and **Plate**. It uses the Pug template (`updates.pug`) to display the form.
+
+### Route 3: `/update-cobj` (POST)
+- **Purpose**: This route handles the POST request to submit data from the form.
+- **Implementation**: When the user submits the form, the app makes a POST request to the HubSpot API to create a new custom object record. Upon success, the user is redirected to the homepage.
+
+
 ---
 
 ## Technology Stack
-- **Node.js** – JavaScript runtime
-- **Express** – Routing and application framework
-- **Axios** – HTTP client for HubSpot API calls
-- **Pug** – Server-side templating engine
+- **Node.js** – JavaScript runtime (https://nodejs.org/en/download)
+- **Express** – Routing and application framework (https://expressjs.com/en/starter/installing.html)
+- **Axios** – HTTP client for HubSpot API calls (https://axios-http.com/docs/intro)
+- **Pug** – Server-side templating engine (https://pugjs.org/api/getting-started.html)
 - **dotenv** – Environment variable management
-- **Git & GitHub** – Version control and collaboration
+- **Git & GitHub** – Version control and collaboration (https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
 
 ---
 
