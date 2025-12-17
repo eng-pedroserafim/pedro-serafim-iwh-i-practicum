@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .container
+      .header
+        div
+          h1 Cars
+          p.subtitle Custom object records stored in HubSpot
+        a.btn(href="/update-cobj") Add to this table
+
+      .card
+        if data && data.length
+          table.table
+            thead
+              tr
+                th Name
+                th Brand
+                th Plate
+                th HubSpot
+            tbody
+              each row in data
+                tr
+                  td= row.properties[nameProp]
+                  td= row.properties[brandProp]
+                  td= row.properties[plateProp]
+                  td
+                    if row.url
+                      a(href=row.url target="_blank" rel="noopener") Open
+                    else
+                      | —
+        else
+          p.empty No records found.

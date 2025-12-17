@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .container
+      .header
+        div
+          h1= title
+          p.subtitle Create a new Cars record (stored in HubSpot)
+        a.btn(href="/") Return to the homepage
+
+      .card
+        form.form(action="/update-cobj" method="POST")
+          .field
+            label(for="name") Name
+            input#name(type="text" name="name" required placeholder="e.g., Civic")
+          .field
+            label(for="brand") Brand
+            input#brand(type="text" name="brand" required placeholder="e.g., Honda")
+          .field
+            label(for="plate") Plate
+            input#plate(type="text" name="plate" required placeholder="e.g., ERA-3R45" pattern="^[A-Za-z]{3}-[0-9][A-Za-z0-9][0-9]{2}$" title="Use ABC-1D23 (example: ERA-3R45)")
+          p.helper Plate format: ABC-1D23 (example: ERA-3R45)
+
+          .form-actions
+            button.btn(type="submit") Create record
