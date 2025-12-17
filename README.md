@@ -1,19 +1,21 @@
-# Welcome to the Integrating With HubSpot I: Foundations Practicum
-
-This repository is for the **Integrating With HubSpot I: Foundations** course.  
+# Integrating With HubSpot I: Foundations Practicum
 This practicum is one of two requirements for receiving the **Integrating With HubSpot I: Foundations certification**.  
-The second requirement is passing the certification exam with a minimum score of **75%**.
 
-The full practicum instructions are available here:  
-https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en
+## Author
+PEDRO SERAFIM GOMES NETO
+
+---
 
 **HubSpot developer test account custom object list view:**  
 https://app.hubspot.com/contacts/50806986/objects/2-54449633/views/all/list
 
+**Github repository:** 
+This repository is for the **Integrating With HubSpot I: Foundations** course.   
+https://github.com/eng-pedroserafim/pedro-serafim-iwh-i-practicum
+
 ---
 
 ## Practicum Summary
-
 This project is a **Node.js application** built to fulfill all technical and procedural requirements defined in the Integrating With HubSpot I: Foundations practicum.
 
 The implementation demonstrates the complete lifecycle of a simple HubSpot integration:
@@ -29,7 +31,6 @@ The project was developed and validated using a **HubSpot Developer Test Account
 ---
 
 ## Custom Object Implementation
-
 A custom CRM object was created to satisfy the practicum requirements.
 
 **Object details:**
@@ -46,7 +47,6 @@ The object was populated with multiple records and validated both through the Hu
 ---
 
 ## Application Behavior
-
 The Node.js application integrates directly with the HubSpot CRM API using a **private app access token**.
 
 The application supports the following behaviors:
@@ -60,7 +60,6 @@ The application supports the following behaviors:
 ---
 
 ## Routes Implemented
-
 | Route | Method | Description |
 |------|--------|-------------|
 | `/` | GET | Retrieves all Cars records from HubSpot and renders them in a table |
@@ -72,7 +71,6 @@ These routes demonstrate correct usage of HTTP methods, request handling, and AP
 ---
 
 ## Technology Stack
-
 - **Node.js** – JavaScript runtime
 - **Express** – Routing and application framework
 - **Axios** – HTTP client for HubSpot API calls
@@ -83,7 +81,6 @@ These routes demonstrate correct usage of HTTP methods, request handling, and AP
 ---
 
 ## Environment Variables
-
 Sensitive credentials are managed using environment variables.
 
 The following variables are required:
@@ -98,7 +95,6 @@ The `.env` file is excluded from version control via `.gitignore` to ensure cred
 ---
 
 ## Running the Application Locally
-
 1. Install dependencies:
    ```
    npm install
@@ -118,21 +114,22 @@ From the homepage, users can view existing Cars records and add new records via 
 
 ---
 
-## Development and Version Control Practices
-
+## Commit Log / Delivery Notes: Development and Version Control Practices
 This repository reflects professional development practices:
 
-- Incremental commits documenting each development step
-- Feature development performed on a working branch
-- Final merge into the main branch
-- No secrets committed to source control
+- [✓] Setup repo + branch workflow
+- [✓] Add dotenv + env-based auth
+- [✓] Implement GET / listing Cars
+- [✓] Implement GET+POST /update-cobj create record
+- [✓] Add Pug templates + CSS improvements
+- [✓] Add client-side validation for plate
+- [✓] Document usage + security notes
 
 Commit history was intentionally maintained to demonstrate progress and adherence to the practicum instructions.
 
 ---
 
 ## Practicum Requirements Checklist
-
 The following checklist documents how each practicum requirement was addressed:
 
 - [✓] HubSpot Developer Test Account created
@@ -149,10 +146,3 @@ The following checklist documents how each practicum requirement was addressed:
 - [✓] Private app token excluded from the repository
 - [✓] Incremental Git commits demonstrating development progress
 - [✓] Working branch merged back into main branch
-
----
-
-## Author
-
-Pedro Serafim  
-Integrating With HubSpot I: Foundations Practicum
