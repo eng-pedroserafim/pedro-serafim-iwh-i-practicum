@@ -173,4 +173,3 @@ The following checklist documents how each practicum requirement was addressed:
 - [✓] Environment variables used for secure authentication
 - [✓] Private app token excluded from the repository
 - [✓] Incremental Git commits demonstrating development progress
-- [ ] Working branch merged back into main branch
