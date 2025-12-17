@@ -35,11 +35,11 @@ app.get('/', async (req, res) => {
       }
     });
 
-    console.log(resp.data);
+    //console.log(resp.data);
 
     const data = resp.data.results;
-    const props = ['name', 'brand', 'plate'];
-    res.render('homepage', { title: 'Cars | Integrating With HubSpot I Practicum', data, props });
+    const props = [nameProp, brandProp, plateProp];
+    res.render('homepage', { title: 'Cars | Integrating With HubSpot I Practicum', data, props, nameProp, brandProp, plateProp });    
     
   } catch (error) {
     console.error(error.response?.data || error);

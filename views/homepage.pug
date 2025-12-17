@@ -23,9 +23,9 @@ html
             tbody
               each row in data
                 tr
-                  td= row.properties.name
-                  td= row.properties.brand
-                  td= row.properties.plate
+                  td= row.properties[nameProp]
+                  td= row.properties[brandProp]
+                  td= row.properties[plateProp]
                   td
                     if row.url
                       a(href=row.url target="_blank" rel="noopener") Open
